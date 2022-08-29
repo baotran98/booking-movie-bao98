@@ -29,6 +29,7 @@ export default function HomeMenu(props) {
             {heThongRap.lstCumRap?.slice(0, 8).map((cumRap) => {
               return (
                 <TabPane
+                  key={cumRap.maCumRap}
                   tab={
                     <div className="flex w-96 animate__animated animate__fadeIn">
                       <img
@@ -53,7 +54,6 @@ export default function HomeMenu(props) {
                       </div>
                     </div>
                   }
-                  key={cumRap.maCumRap}
                 >
                   {cumRap.danhSachPhim?.slice(0, 4).map((phim) => {
                     return (
@@ -111,7 +111,6 @@ export default function HomeMenu(props) {
                                           `/checkout/${lich.maLichChieu}`
                                         );
                                       }}
-                                      // to={`/checkout/${lich.maLichChieu}`}
                                       className="col-span-1 text-center dark:text-gray-900 w-20 mx-1 my-1 p-1 rounded bg-white shadow-lg shadow-gray-900 transition ease-in-out duration-300 hover:text-white hover:bg-violet-700 hover:scale-110 cursor-pointer"
                                       key={lich.maLichChieu}
                                     >

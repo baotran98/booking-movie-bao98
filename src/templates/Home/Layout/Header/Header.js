@@ -13,27 +13,26 @@ const { Option } = Select;
 export default function Header(props) {
   const { t, i18n } = useTranslation();
   const { userLogin } = useSelector((state) => state.QuanLyUserReducer);
-  console.log({ userLogin });
 
   const menu = (
     <Menu
       items={[
-        userLogin.maLoaiNguoiDung === "QuanTri"
-          ? {
-              key: "1",
-              label: (
-                <div
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => {
-                    history.push("/admin/film");
-                  }}
-                >
-                  Quản trị
-                </div>
-              ),
-            }
-          : "",
+        // userLogin.maLoaiNguoiDung === "QuanTri"
+        {
+          key: "1",
+          label: (
+            <div
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                history.push("/admin/film");
+              }}
+            >
+              Quản trị
+            </div>
+          ),
+        },
+        // : "",
         {
           key: "2",
           label: (
@@ -80,7 +79,7 @@ export default function Header(props) {
             onClick={() => {
               history.push("/login");
             }}
-            className="self-center px-8 py-3 rounded"
+            className="self-center px-6 py-3 font-semibold mr-1 rounded-md hover:shadow-md hover:shadow-gray-900 transition ease-in duration-300 hover:text-violet-700 hover:bg-violet-50 hover:scale-95"
           >
             {t("Đăng nhập")}
           </button>
@@ -88,7 +87,7 @@ export default function Header(props) {
             onClick={() => {
               history.push("/register");
             }}
-            className="self-center px-8 py-3 font-semibold rounded dark:bg-violet-400 dark:text-gray-900"
+            className="self-center px-8 py-3 font-semibold rounded-md shadow-md shadow-gray-900 dark:bg-violet-700 dark:text-gray-50 transition ease-in duration-100  hover:text-gray-50 hover:scale-95"
           >
             {t("Đăng ký")}
           </button>
@@ -132,8 +131,8 @@ export default function Header(props) {
               <NavLink
                 to="/home"
                 rel="noopener noreferrer"
-                className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent transition duration-500 text-white hover:dark:text-violet-400"
-                activeClassName="dark:text-violet-400 dark:border-violet-400"
+                className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent transition duration-500 text-white hover:dark:text-violet-700"
+                activeClassName="dark:text-violet-700 dark:border-violet-700"
               >
                 {t("Trang chủ")}
               </NavLink>
@@ -142,8 +141,8 @@ export default function Header(props) {
               <NavLink
                 to="/contact"
                 rel="noopener noreferrer"
-                className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent transition duration-500 text-white hover:dark:text-violet-400"
-                activeClassName="dark:text-violet-400 dark:border-violet-400"
+                className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent transition duration-500 text-white hover:dark:text-violet-700"
+                activeClassName="dark:text-violet-700 dark:border-violet-700"
               >
                 {t("Liên hệ")}
               </NavLink>
@@ -152,22 +151,12 @@ export default function Header(props) {
               <NavLink
                 to="/news"
                 rel="noopener noreferrer"
-                className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent transition duration-500 text-white hover:dark:text-violet-400"
-                activeClassName="dark:text-violet-400 dark:border-violet-400"
+                className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent transition duration-500 text-white hover:dark:text-violet-700"
+                activeClassName="dark:text-violet-700 dark:border-violet-700"
               >
                 {t("Tin tức")}
               </NavLink>
             </li>
-            {/* <li className="flex">
-              <a
-                rel="noopener noreferrer"
-                className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent transition duration-500 text-white hover:dark:text-violet-400"
-                activeClassName="dark:text-violet-400 dark:border-violet-400"
-                href="#cumRap"
-              >
-                {t("Cụm rạp")}
-              </a>
-            </li> */}
           </ul>
           <div className="items-center  flex-shrink-0 hidden lg:flex ">
             {renderSignInUP()}

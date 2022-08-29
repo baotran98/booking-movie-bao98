@@ -8,7 +8,7 @@ import {
   VideoCameraOutlined,
   FileAddOutlined,
 } from "@ant-design/icons";
-import { Breadcrumb, Layout, Menu } from "antd";
+import { Layout, Menu } from "antd";
 import "./css/AdminTemplate.css";
 import HeaderTemplate from "./Header/HeaderTemplate";
 import { USER_LOGIN } from "../../util/settings/config";
@@ -65,10 +65,10 @@ export const AdminTemplate = (props) => {
     return <Redirect to="/login" />;
   }
 
-  if (userLogin.maLoaiNguoiDung !== "QuanTri") {
-    alert("Bạn không có quyền truy cập vào trang này!");
-    return <Redirect to="/login" />;
-  }
+  // if (userLogin.maLoaiNguoiDung !== "QuanTri") {
+  //   alert("Bạn không có quyền truy cập vào trang này!");
+  //   return <Redirect to="/login" />;
+  // }
 
   const { Component, ...restProps } = props;
 
@@ -86,14 +86,18 @@ export const AdminTemplate = (props) => {
               }}
             >
               <Sider
+                trigger={null}
                 collapsible
                 collapsed={collapsed}
                 onCollapse={(value) => setCollapsed(value)}
               >
                 <img
+                  onClick={() => {
+                    history.push("/");
+                  }}
                   src="https://movie-booking-project.vercel.app/img/logoTixLoading.png"
                   alt="logo"
-                  className="w-20 2xl:ml-8 my-3"
+                  className="w-20 2xl:ml-8 my-3 cursor-pointer"
                 />
                 <Menu
                   theme="dark"
@@ -105,21 +109,6 @@ export const AdminTemplate = (props) => {
               <Layout className="site-layout">
                 <HeaderTemplate {...propsRoute} />
                 <Content className="m-5 ">
-                  {/* <Breadcrumb
-                    style={{
-                      margin: "16px 0",
-                    }}
-                  >
-                    <Breadcrumb.Item
-                      className="text-sm text-sky-400 cursor-pointer"
-                      onClick={() => {
-                        history.push("/admin/film");
-                      }}
-                    >
-                      Danh sách phim
-                    </Breadcrumb.Item>
-                    <Breadcrumb.Item>Bill</Breadcrumb.Item>
-                  </Breadcrumb> */}
                   <div
                     className="dark:bg-white shadow-lg rounded"
                     style={{

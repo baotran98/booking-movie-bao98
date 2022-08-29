@@ -356,7 +356,7 @@ function Checkout(props) {
             <div className="my-3">
               <div className="text-xs text-gray-400 my-1">Số điện thoại</div>
               <div className="text-sm my-1">
-                {userLogin?.soDT.length > 1
+                {userLogin.soDT?.length > 1
                   ? userLogin.soDT
                   : "chưa có số điện thoại"}
               </div>

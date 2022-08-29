@@ -7,7 +7,7 @@ export const getCumRapAction = () => {
   return async (dispatch) => {
     try {
       const result = await quanLyRapService.layDanhSachCumRap();
-      console.log("List Cum Rap", result);
+      // console.log("List Cum Rap", result);
       // đưa dữ liệu lầy về từ API lên Reducer
       dispatch({
         type: GET_LIST_CUM_RAP,
@@ -28,7 +28,7 @@ export const getThongTinChiTietPhim = (id) => {
         type: GET_DETAIL_FILM,
         detailFilm: result.data.content,
       });
-      console.log({ result });
+      // console.log({ result });
     } catch (error) {
       console.log("errors", error);
     }

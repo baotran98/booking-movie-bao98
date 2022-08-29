@@ -44,9 +44,18 @@ export const dangKyAction = (nd) => {
         });
         history.push("/login");
       }
-      console.log("Regis success", result);
+      // console.log("Regis success", result);
     } catch (error) {
-      console.log(error.response?.data);
+      if (error.response.data.statusCode === 400) {
+        Swal.fire({
+          position: "center",
+          icon: "error",
+          title: `${error.response.data.content}`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+      // console.log(error.response?.data);
     }
   };
 };
@@ -62,7 +71,7 @@ export const layThongTinUserAction = () => {
           thongTinUser: result.data.content,
         });
       }
-      console.log("Thông tin user", result);
+      // console.log("Thông tin user", result);
     } catch (error) {
       console.log(error.response?.data);
     }
@@ -83,9 +92,18 @@ export const updateThongTinUserAction = (nd) => {
         });
         await dispatch(layThongTinUserAction());
       }
-      console.log("Update success", result);
+      // console.log("Update success", result);
     } catch (error) {
-      console.log(error.response?.data);
+      if (error.response.data.statusCode === 500) {
+        Swal.fire({
+          position: "center",
+          icon: "error",
+          title: `${error.response.data.content}`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+      // console.log(error.response?.data);
     }
   };
 };
@@ -99,7 +117,7 @@ export const layDanhSachLoaiNguoiDungAction = () => {
           type: GET_LIST_TYPE_USER,
           danhSachLoaiUser: result.data.content,
         });
-        console.log("Get list code user ", result);
+        // console.log("Get list code user ", result);
       }
     } catch (error) {
       console.log(error.response?.data);
@@ -118,7 +136,7 @@ export const layDanhSachNguoiDungAction = (tuKhoa = "") => {
           danhSachUser: result.data.content,
         });
       }
-      console.log("Get list user success", result);
+      // console.log("Get list user success", result);
     } catch (error) {
       console.log(error.response?.data);
     }
@@ -138,18 +156,18 @@ export const themNguoiDungAction = (nd) => {
           timer: 1500,
         });
       }
-      console.log("Add user successful", result);
+      // console.log("Add user successful", result);
     } catch (error) {
       if (error.response.data.statusCode === 500) {
         Swal.fire({
           position: "center",
           icon: "error",
-          title: "Tài khoản đã tồn tại!",
+          title: `${error.response.data.content}`,
           showConfirmButton: false,
           timer: 1500,
         });
       }
-      console.log(error.response?.data);
+      // console.log(error.response?.data);
     }
   };
 };
@@ -166,9 +184,18 @@ export const thayDoiThongTinNguoiDungAction = (nd) => {
           timer: 1500,
         });
       }
-      console.log("Update success", result);
+      // console.log("Update success", result);
     } catch (error) {
-      console.log(error.response?.data);
+      if (error.response.data.statusCode === 500) {
+        Swal.fire({
+          position: "center",
+          icon: "error",
+          title: `${error.response.data.content}`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+      // console.log(error.response?.data);
     }
   };
 };
@@ -187,13 +214,21 @@ export const xoaNguoiDungAction = (taiKhoan) => {
         });
         await dispatch(layDanhSachNguoiDungAction());
       }
-      console.log("Delete user success", result);
+      // console.log("Delete user success", result);
     } catch (error) {
       if (error.response.data.statusCode === 500) {
         Swal.fire({
           position: "center",
           icon: "error",
-          title: "Người dùng này đã đặt vé xem phim không thể xóa!",
+          title: `${error.response.data.content}`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      } else {
+        Swal.fire({
+          position: "center",
+          icon: "error",
+          title: `Bạn không đủ quyền để thay đổi !`,
           showConfirmButton: false,
           timer: 1500,
         });

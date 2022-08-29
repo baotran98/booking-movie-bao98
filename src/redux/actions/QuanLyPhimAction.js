@@ -7,7 +7,7 @@ export const getPhimAction = (tenPhim = "") => {
   return async (dispatch) => {
     try {
       const result = await quanLyPhimService.layDanhSachPhim(tenPhim);
-      console.log("List film", result);
+      // console.log("List film", result);
       // đưa dữ liệu lấy về từ API lên Reducer
       dispatch({
         type: GET_LIST_FILM,
@@ -32,7 +32,7 @@ export const themPhimMoiUpLoadHinhAction = (formData) => {
           timer: 1500,
         });
       }
-      console.log("Thêm phim mới", result);
+      // console.log("Thêm phim mới", result);
     } catch (error) {
       console.log(error.response?.data);
     }
@@ -49,7 +49,7 @@ export const layThongTinPhimAction = (maPhim) => {
           thongTinPhim: result.data.content,
         });
       }
-      console.log("Thông tin phim", result);
+      // console.log("Thông tin phim", result);
     } catch (error) {
       console.log(error.response?.data);
     }
@@ -68,7 +68,7 @@ export const capNhatPhimUploadAction = (formData) => {
           showConfirmButton: false,
           timer: 1500,
         });
-        console.log("Cập nhật phim", result);
+        // console.log("Cập nhật phim", result);
       }
     } catch (error) {
       console.log(error.response?.data);
@@ -89,7 +89,7 @@ export const xoaPhimAction = (maPhim) => {
           timer: 1500,
         });
         await dispatch(getPhimAction());
-        console.log("Xóa phim", result);
+        // console.log("Xóa phim", result);
       }
     } catch (error) {
       console.log(error.response?.data);

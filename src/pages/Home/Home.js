@@ -9,7 +9,7 @@ import CarouselHome from "../../templates/Home/Layout/CarouselHome/CarouselHome"
 export default function Home(props) {
   const { arrPhim } = useSelector((state) => state.QuanLyPhimReducer);
   const { heThongCumRap } = useSelector((state) => state.QuanLyRapReducer);
-  console.log(heThongCumRap);
+
   // useDispatch đưa dữ liệu từ API lên Reducer
   const dispatch = useDispatch();
   // dùng Effect để lấy dữ liệu từ API về component

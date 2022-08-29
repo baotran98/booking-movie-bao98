@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Button, Form, Input, Select } from "antd";
+import { Form, Input, Select } from "antd";
 import {
   EyeInvisibleOutlined,
   EyeTwoTone,
@@ -17,7 +17,6 @@ import * as Yup from "yup";
 import {
   layDanhSachLoaiNguoiDungAction,
   thayDoiThongTinNguoiDungAction,
-  updateThongTinUserAction,
 } from "../../../../redux/actions/QuanLyUserAction";
 const { Option } = Select;
 
@@ -30,7 +29,7 @@ export default function EditUser(props) {
     dispatch(layDanhSachLoaiNguoiDungAction());
   }, []);
 
-  // lấy thông tin phim từ LocalStorage
+  // lấy thông tin user từ LocalStorage
   let infoUser = [];
   if (localStorage.getItem("userParams")) {
     infoUser = JSON.parse(localStorage.getItem("userParams"));
@@ -65,7 +64,6 @@ export default function EditUser(props) {
     //   hoTen: Yup.string().required("Họ và tên không được bỏ trống !!!"),
     // }),
     onSubmit: (values) => {
-      console.log({ values });
       dispatch(thayDoiThongTinNguoiDungAction(values));
     },
   });

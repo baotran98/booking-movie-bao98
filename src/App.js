@@ -51,7 +51,6 @@ function App() {
         <UserTemplate path="/login" exact Component={Login} />
         <UserTemplate path="/register" exact Component={Register} />
         <UserTemplate path="/profile" exact Component={Profile} />
-        <UserTemplate path="*" exact Component={Home} />
         <AdminTemplate path="/admin" exact Component={Film} />
         <AdminTemplate path="/admin/film" exact Component={Film} />
         <AdminTemplate
@@ -80,7 +79,6 @@ function App() {
           exact
           Component={EditUser}
         />
-        <AdminTemplate path="*" exact Component={Film} />
       </Switch>
     </Router>
   );

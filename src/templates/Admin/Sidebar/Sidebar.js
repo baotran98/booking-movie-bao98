@@ -4,7 +4,9 @@ import {
   VideoCameraOutlined,
   DesktopOutlined,
 } from "@ant-design/icons";
-import { Menu } from "antd";
+import { Menu, Layout } from "antd";
+const { Sider } = Layout;
+
 function getItem(label, key, icon, children, theme) {
   return {
     key,
@@ -28,46 +30,32 @@ export default function Sidebar(props) {
   };
 
   const items = [
-    getItem(
-      "Users",
-      "sub1",
-      <UserOutlined />
-      // [
-      //   getItem("Option 1", "1"),
-      //   getItem("Option 2", "2"),
-      //   getItem("Option 3", "3"),
-      // ],
-    ),
+    getItem("Users", "sub1", <UserOutlined />),
     getItem("Films", "5", <VideoCameraOutlined />),
     getItem("Showtime", "6", <DesktopOutlined />),
   ];
 
   return (
-    <div className="dark:bg-gray-900 shadow-lg min-h-screen">
-      <img
-        src="https://movie-booking-project.vercel.app/img/logoTixLoading.png"
-        alt="logo"
-        className="w-20 ml-14 mt-5"
-      />
-      <br />
-      <Menu
-        onClick={onClick}
-        style={{
-          width: 256,
-        }}
-        defaultOpenKeys={["sub1"]}
-        selectedKeys={[current]}
-        mode="vertical"
-        theme="dark"
-        items={items}
-      />
-      {/* <Switch
-        className="text-center"
-        checked={theme === "dark"}
-        onChange={changeTheme}
-        checkedChildren="Dark"
-        unCheckedChildren="Light"
-      /> */}
-    </div>
+    <Sider trigger={null} collapsible>
+      <div className="dark:bg-gray-900 shadow-lg min-h-screen">
+        <img
+          src="https://movie-booking-project.vercel.app/img/logoTixLoading.png"
+          alt="logo"
+          className="w-20 ml-14 mt-5"
+        />
+        <br />
+        <Menu
+          onClick={onClick}
+          style={{
+            width: 256,
+          }}
+          defaultOpenKeys={["sub1"]}
+          selectedKeys={[current]}
+          mode="vertical"
+          theme="dark"
+          items={items}
+        />
+      </div>
+    </Sider>
   );
 }
