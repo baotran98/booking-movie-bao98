@@ -355,7 +355,7 @@ export default function Profile(props) {
                 </button>
               </div>
             </Form>
-            <div className="absolute bottom-48 left-28 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-between">
+            <div className="absolute xl:mb-4 xl:ml-3 xl:bottom-64 2xl:bottom-48 2xl:mb-0 2xl:ml-0 left-28 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-between">
               <button
                 onClick={() => {
                   setVisibleTicket(!visibleTicket);
@@ -372,7 +372,7 @@ export default function Profile(props) {
         <div className="w-ful lg:w-2/5">
           {/* Big profile image for side bar (desktop) */}
           {visibleTicket ? (
-            <div className="bg-gray-50 opacity-85 p-2 shadow-lg shadow-gray-700 rounded-lg animate__animated animate__fadeInUp">
+            <div className="bg-gray-50 opacity-85 p-2 xl:w-96 shadow-lg shadow-gray-700 rounded-lg animate__animated animate__fadeInUp">
               <div className="text-2xl text-center my-1">Danh sách vé</div>
               <hr />
               <List>

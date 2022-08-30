@@ -6,9 +6,9 @@ import "./CarouselHome.css";
 
 // antd
 const contentStyle = {
-  height: "100vh",
+  height: "auto",
   color: "#fff",
-  lineHeight: "160px",
+  lineHeight: "120px",
   textAlign: "center",
   backgroundPosition: "center",
   backgroundSize: "100%",
@@ -35,15 +35,15 @@ export default function CarouselHome(props) {
       return (
         <div key={image.maBanner}>
           <div
+            className=""
             // dùng backgroundImage để set cứng hình thay cho img tránh bị vỡ hình khi responsive
-
             style={{
               ...contentStyle,
               backgroundImage: `url(${image.hinhAnh})`,
             }}
           >
             <img
-              className=" 2xl:h-full 2xl:w-full opacity-0"
+              className="xl:h-auto 2xl:h-screen 2xl:w-full opacity-0"
               src={image.hinhAnh}
               alt={image.maPhim}
             />

@@ -75,7 +75,7 @@ export default function CreateUser(props) {
     >
       <div className="flex justify-center">
         <div
-          className="flex justify-center items-center  w-1/2 h-28 rounded-t-md shadow-lg  -mt-16 bg-opacity-80 animate__animated animate__fadeInDown"
+          className="flex justify-center items-center xl:w-2/3 2xl:w-1/2 h-28 rounded-t-md shadow-lg  -mt-16 bg-opacity-80 animate__animated animate__fadeInDown"
           style={{
             backgroundImage:
               "linear-gradient(to top, #fdcbf1 0%, #fdcbf1 1%, #e6dee9 100%)",
@@ -85,10 +85,10 @@ export default function CreateUser(props) {
         </div>
       </div>
       <div className="flex justify-center">
-        <div className="w-1/2 pb-10 bg-gray-100 bg-opacity-50  rounded-b-md shadow-lg animate__animated animate__fadeIn">
+        <div className="xl:w-2/3 2xl:w-1/2 pb-10 bg-gray-100 bg-opacity-50  rounded-b-md shadow-lg animate__animated animate__fadeIn">
           <Form layout="vertical" onSubmitCapture={formik.handleSubmit}>
             <div className="flex justify-center items-center mt-5">
-              <div className="mx-5">
+              <div className="xl:mx-3 2xl:mx-5">
                 <Form.Item label="Tài khoản">
                   <Input
                     className="shadow-lg"

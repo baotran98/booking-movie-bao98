@@ -102,8 +102,7 @@ export default function HomeMenu(props) {
                                         "DD/MM/YYYY"
                                       )}
                                     </span>
-                                    -
-                                    <span className="ml-1 ">{lich.tenRap}</span>
+                                    -<span className="ml-1">{lich.tenRap}</span>
                                     <br />
                                     <div
                                       onClick={() => {
@@ -138,7 +137,7 @@ export default function HomeMenu(props) {
 
   return (
     <AnimationOnScroll animateIn="animate__fadeIn">
-      <div className="p-20 ">
+      <div className="2xl:p-20">
         <Tabs tabPosition={tabPosition}>{renderHeThongRap()}</Tabs>
       </div>
     </AnimationOnScroll>
